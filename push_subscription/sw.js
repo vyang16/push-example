@@ -6,3 +6,7 @@ self.addEventListener('push', function(event) {
     })
   );
 });
+
+self.addEventListener('pushsubscriptionchange', function(event) {
+  console.log('pushsubscriptionchange event was fired!');
+});
