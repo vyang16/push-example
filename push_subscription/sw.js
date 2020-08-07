@@ -8,11 +8,9 @@ self.addEventListener('push', function(event) {
   );
 });
 
+
 self.addEventListener('pushsubscriptionchange', function(event) {
-  function logChange(event) {
-    console.log('[Service Worker] pushsubscription change event received!');
-    console.log(JSON.stringify(event.oldSubscription));
-    console.log(JSON.stringify(event.newSubscription));
-  }
-  event.waitUntil(logChange(self));
+  console.log('[Service Worker] pushsubscription change event registered'
+              + JSON.stringify(event.oldSubscription)
+              + JSON.stringify(event.newSubsciption));
 });
