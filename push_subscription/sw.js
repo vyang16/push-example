@@ -8,9 +8,18 @@ self.addEventListener('push', function(event) {
   );
 });
 
-
 self.addEventListener('pushsubscriptionchange', function(event) {
-  console.log('[Service Worker] pushsubscription change event registered'
-              + JSON.stringify(event.oldSubscription)
-              + JSON.stringify(event.newSubsciption));
+  console.log('[Service Worker] pushsubscriptionchage!');
+  if(event.oldSubscription) {
+    console.log('has oldSubscription');
+  }else{
+    console.log('no oldSubscription');
+  }
+
+  if(event.newSubscription) {
+    console.log('has newSubscription');
+  }else{
+    console.log("no newSubscription");
+  }
+
 });
