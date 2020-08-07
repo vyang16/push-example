@@ -14,5 +14,5 @@ self.addEventListener('pushsubscriptionchange', function(event) {
     console.log(JSON.stringify(event.oldSubscription));
     console.log(JSON.stringify(event.newSubscription));
   }
-  event.waitUntil(logChange(event));
+  event.waitUntil(logChange(self));
 });
