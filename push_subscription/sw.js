@@ -10,6 +10,7 @@ self.addEventListener('push', function(event) {
 
 self.addEventListener('pushsubscriptionchange', function(event) {
   console.log('[Service Worker] `pushsubscriptionchange` event!');
+  var content = {newSubscription, oldSubscription};
   if(event.oldSubscription) {
     console.log('has oldSubscription');
     console.log(JSON.stringify(event.oldSubscription));
@@ -23,5 +24,10 @@ self.addEventListener('pushsubscriptionchange', function(event) {
   }else{
     console.log("no newSubscription");
   }
-
+  var content = "";
+  event.waitUntil(
+    self.registration.showNotification('Pushsubscriptionchange', {
+      body: content,
+    })
+  );
 });
